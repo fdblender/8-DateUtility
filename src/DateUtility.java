@@ -83,8 +83,27 @@ public class DateUtility {
 		return dayStr;
 	}
 
+	// subtract the 2nd date from the first date and return ms
+	public static long SubtractTwoDates(int month1, int day1, int year1, int month2, int day2, int year2) {
+
+		// get todays date in ms
+		Calendar gc = new GregorianCalendar();
+		gc.set(year1, month1 - 1, day1, 0, 0, 0);
+		long firstDateMs = gc.getTimeInMillis();
+
+		// get ms for the given date
+		gc.set(year2, month2 - 1, day2, 0, 0, 0);
+		long secondDateMs = gc.getTimeInMillis();
+
+		// calculate the difference and convert to days
+		long diff = firstDateMs - secondDateMs;
+		long millisecondsPerDay = (24 * 60 * 60 * 1000);
+
+		return diff / millisecondsPerDay;
+	}
+
 	// calculate the days between today and a given date in ms
-	public static long SubtractDays(int month, int day, int year) {
+	public static long SubtractFromToday(int month, int day, int year) {
 		// get todays date in ms
 		Calendar gc = new GregorianCalendar();
 		long todayInMS = gc.getTimeInMillis();
