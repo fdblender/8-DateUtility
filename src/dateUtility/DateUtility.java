@@ -1,3 +1,5 @@
+package dateUtility;
+
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
@@ -84,7 +86,7 @@ public class DateUtility {
 	}
 
 	// subtract the 2nd date from the first date and return ms
-	public static long SubtractTwoDates(int month1, int day1, int year1, int month2, int day2, int year2) {
+	public static long subtractTwoDates(int month1, int day1, int year1, int month2, int day2, int year2) {
 
 		// get todays date in ms
 		Calendar gc = new GregorianCalendar();
@@ -103,7 +105,7 @@ public class DateUtility {
 	}
 
 	// calculate the days between today and a given date in ms
-	public static long SubtractFromToday(int month, int day, int year) {
+	public static long subtractFromToday(int month, int day, int year) {
 		// get todays date in ms
 		Calendar gc = new GregorianCalendar();
 		long todayInMS = gc.getTimeInMillis();
@@ -126,7 +128,7 @@ public class DateUtility {
 
 	public static boolean isLeapYear(int year) {
 		// returns t/f if the year is a leap year
-		// leap years are all years divisible by 4 but not 100
+		// leap years are all years divisible by 4 subtractTwoDatesbut not 100
 		// years that are divisible by 400 are leap years, too
 		// is it divisible by 4?
 
